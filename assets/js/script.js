@@ -132,7 +132,7 @@
             answerSelect.innerText = index.choices[i].choice;
             answerSelect.classList.add('btn');
             answerSelect.classList.add('answerbtn');
-            answerSelect.addEventListener("click", answerCheck);
+            answerSelect.addEventListener("click", checkAnswer);
             answerSelectionEl.appendChild(answerSelect);
         }
     };
@@ -156,6 +156,29 @@
             correctEl.classList.add("hide");
         }
     };
+
+    var checkAnswer = function(event) {
+        var selectedAnswer = event.target
+            if (arrayShuffleQuestions[questionIndex].a === selectedAnswer.innerText){
+                answerCorrect();
+                score = score + 5;
+            }
+            else {
+                answerIncorrect()
+                score = score - 2;
+                timeleft = timeleft - 10;
+            }
+
+            // Check if there is another question and if there is load it
+            questionIndex++
+            if (arrayShuffleQuestions.length > questionIndex + 1) {
+                loadQuestion();
+            }
+            else {
+                gameover = "true";
+                showScore ();
+            }
+    }
 
     
     //on start click, start game
