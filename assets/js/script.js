@@ -222,7 +222,7 @@
         }
 
         savePlayerScore();
-
+        displayHighScores();
     }
 
     var savePlayerScore = function () {
@@ -281,5 +281,9 @@
     
     //on start click, start game
     btnStartEl.addEventListener("click", startQuiz);
+    // submit button event listener
+    formInitialsEl.addEventListener("submit", storeHighScore)
+    // When "High Scores!" button is clicked
+    highScoreLinkEl.addEventListener("click", displayHighScores)
     //Go back button
     btnReturnEl.addEventListener("click", goToStartPage);
