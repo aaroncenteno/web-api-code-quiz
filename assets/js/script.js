@@ -157,6 +157,7 @@
         }
     };
 
+    // check to see if the players choice is correct/incorrect
     var checkAnswer = function(event) {
         var selectedAnswer = event.target
             if (arrayShuffleQuestions[questionIndex].a === selectedAnswer.innerText){
@@ -180,6 +181,16 @@
             }
     }
 
+    // show the players total score at the end of the quiz
+    var showScore = function () {
+        questionDivEl.classList.add("hide");
+        endPageEl.classList.remove("hide");
+        endPageEl.classList.add("show");
+
+        var scoreDisplay = document.createElement("p");
+        scoreDisplay.innerText = ("Your final score is " + score + "!");
+        playerScoreEl.appendChild(scoreDisplay);
+    }
     
     //on start click, start game
     btnStartEl.addEventListener("click", startQuiz);
