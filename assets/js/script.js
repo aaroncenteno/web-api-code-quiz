@@ -48,3 +48,39 @@ var questions = [
     }
 ];
 
+// if return to quiz button is hit on high score page
+var goToStartPage = function () {
+    highScoresEl.classList.add("hide");
+    highScoresEl.classList.remove("show");
+    openingPageEl.classList.remove("hide");
+    openingPageEl.classList.add("show");
+    playerScoreEl.removeChild(playerScoreEl.lastChild);
+    questionIndex = 0;
+    gameover = "";
+    timerEl.textContent = 0;
+    score= 0;
+
+    if (correctEl.className = "show") {
+        correctEl.classList.remove("show");
+        correctEl.classList.add("hide");
+    }
+    if (incorrectEl.className = "show") {
+        incorrectEl.classList.remove("show");
+        incorrectEl.classList.add("hide");
+    }
+};
+
+// Start Quiz Function
+var startQuiz = function () {
+    // show/hide classes
+    openingPageEl.classList.add('hide');
+    openingPageEl.classList.remove('show');
+    questionDivEl.classList.remove('hide');
+    questionDivEl.classList.add('show');
+// Question Shuffler
+arrayShuffleQuestions = questions.sort(() => Math.random() - 0.5)
+setTime()
+setQuestion()
+}
+
+startQuiz ()
