@@ -23,10 +23,10 @@
     var gameover;
     timerEl.innerText = 0;
 
-//   //High Score Array
+    //High Score Array
     var highScores = [];
 
-//    //assign array details for questions 
+    //assign array details for questions 
     var arrayShuffleQuestions;
     var questionIndex = 0;
 
@@ -82,22 +82,22 @@
     var setTime = function () {
         timeleft = 30;
 
-    var timercheck = setInterval(function() {
-        timerEl.innerText = timeleft;
-        timeleft--;
+        var timercheck = setInterval(function() {
+            timerEl.innerText = timeleft;
+            timeleft--;
 
-        if (gameover) {
-            clearInterval(timercheck);
-        }
-       
-        if (timeleft < 0) {
-            showScore();
-            timerEl.innerText = 0;
-            clearInterval(timercheck);
-        }
+            if (gameover) {
+                clearInterval(timercheck);
+            }
+        
+            if (timeleft < 0) {
+                showScore();
+                timerEl.innerText = 0;
+                clearInterval(timercheck);
+            }
 
         }, 1000)
-    }
+    };
 
     var startQuiz = function() {
         //add classes to show/hide start and quiz screen
@@ -109,13 +109,13 @@
         arrayShuffleQuestions = questions.sort(() => Math.random() - 0.5)
         setTime()
         loadQuestion()
-      }
+    };
     
     // set next question for quiz
     var loadQuestion = function() {
         resetAnswers();
         showQuestion(arrayShuffleQuestions[questionIndex]);
-    }
+    };
 
     // remove answer buttons
     var resetAnswers = function() {
@@ -136,8 +136,29 @@
             answerSelectionEl.appendChild(answerSelect);
         }
     };
-  
-      //on start click, start game
-      btnStartEl.addEventListener("click", startQuiz);
-      //Go back button
-      btnReturnEl.addEventListener("click", goToStartPage);
+
+    // Show Correct Notification on Screen
+    var answerCorrect = function() {
+        if (correctEl.className = "hide") {
+            correctEl.classList.remove("hide");
+            correctEl.classList.add("right-wrong");
+            incorrectEl.classList.remove("right-wrong");
+            incorrectEl.classList.add("hide");
+        }
+    };
+
+    // Show incorrect Notification on screen
+    var answerIncorrect = function() {
+        if (incorrectEl.className = "hide") {
+            incorrectEl.classList.remove("hide");
+            incorrectEl.classList.add("right-wrong");
+            correctEl.classList.remove("right-wrong");
+            correctEl.classList.add("hide");
+        }
+    };
+
+    
+    //on start click, start game
+    btnStartEl.addEventListener("click", startQuiz);
+    //Go back button
+    btnReturnEl.addEventListener("click", goToStartPage);
