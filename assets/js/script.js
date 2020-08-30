@@ -70,6 +70,25 @@ var goToStartPage = function () {
     }
 };
 
+var setTime = function () {
+    timeleft = 30;
+
+var timercheck = setInterval(function() {
+    timerEl.innerText = timeleft;
+    timeleft--
+
+    if (gameover) {
+        clearInterval(timercheck)
+    }
+
+    if (timeleft < 0) {
+        showScore()
+        timerEl.innerText = 0
+        clearInterval(timercheck)
+    }
+    }, 1000)
+}
+
 // Start Quiz Function
 var startQuiz = function () {
     // show/hide classes
@@ -83,4 +102,7 @@ setTime()
 setQuestion()
 }
 
-startQuiz ()
+// on start click, begin the quiz
+btnStartEl.addEventListener("click", startQuiz)
+// Return to Quiz from high scores
+btnReturnEl.addEventListener("click", goToStartPage)
