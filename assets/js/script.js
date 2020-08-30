@@ -1,6 +1,6 @@
 var highScoreLinkEl = document.getElementById("current-high-scores");
 var openingPageEl = document.getElementById("opening-page");
-var btnStartEl = document.getElementById("#start-quiz");
+var btnStartEl = document.querySelector("#start-quiz");
 var questionDivEl = document.getElementById("question-div");
 var questionEl = document.getElementById("current-question");
 var answerSelectionEl = document.getElementById("answer-selection");
@@ -96,15 +96,22 @@ var startQuiz = function () {
     openingPageEl.classList.remove('show');
     questionDivEl.classList.remove('hide');
     questionDivEl.classList.add('show');
-// Question Shuffler
-arrayShuffleQuestions = questions.sort(() => Math.random() - 0.5)
-setTime()
-loadQuestion()
+    // Question Shuffler
+    arrayShuffleQuestions = questions.sort(() => Math.random() - 0.5)
+    setTime()
+    loadQuestion()
 }
 
-var loadQuestion = {
+var loadQuestion = function (){
     resetAnswers()
+    showQuestion(arrayShuffleQuestions,[questionIndex])
 }
+
+var resetAnswers = function() {
+    while (answerSelectionEl.firstChild) {
+        answerSelectionEl.removeChild(answerSelectionEl.firstChild)
+    };
+};
 
 // display current question
 var showQuestion = function(index) {
