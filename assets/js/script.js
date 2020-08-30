@@ -220,6 +220,7 @@
             highScoreEl.innerHTML = highScores[i].initials + " - " + highScores[i].score;
             highScoreListEl.appendChild(highScoreEl);
         }
+        savePlayerScore();
 
     }
 
@@ -246,6 +247,8 @@
         }
     }
 
+
+    loadHighScore();
 
     
     //on start click, start game
