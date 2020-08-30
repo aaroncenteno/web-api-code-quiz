@@ -227,6 +227,16 @@
         localStorage.setItem("highScores", JSON.stringify(highScores))
     }
 
+    var loadHighScore = function () {
+        var allHighScores = localStorage.getItem("highScores")
+            if (!allHighScores) {
+                return false;
+            }
+
+        allHighScores = JSON.parse(allHighScores);
+        allHighScores.sort((a, b) => {return b.score-a.score})
+    }
+
 
     
     //on start click, start game
