@@ -221,7 +221,10 @@
             highScoreListEl.appendChild(highScoreEl);
         }
 
+    }
 
+    var savePlayerScore = function () {
+        localStorage.setItem("highScores", JSON.stringify(highScores))
     }
 
 
