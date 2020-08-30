@@ -218,9 +218,10 @@
             var highScoreEl = document.createElement("li");
             highScoreEl.className = "high-score";
             highScoreEl.innerHTML = highScores[i].initials + " - " + highScores[i].score;
+            highScoreListEl.appendChild(highScoreEl);
         }
 
-        
+
     }
 
 
