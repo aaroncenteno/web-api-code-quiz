@@ -235,6 +235,15 @@
 
         allHighScores = JSON.parse(allHighScores);
         allHighScores.sort((a, b) => {return b.score-a.score})
+
+        for (var i = 0; i < allHighScores.length; i++) {
+            var highScoreEl = document.createElement("li");
+            highScoreEl.className = "high-score";
+            highScoreEl.innerText = allHighScores[i].initials + " - " + allHighScores[i].score;
+            highScoreListEl.appendChild(highScoreEl);
+
+            highScores.push(allHighScores[i]);
+        }
     }
 
 
