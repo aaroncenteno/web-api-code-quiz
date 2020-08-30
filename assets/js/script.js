@@ -190,7 +190,40 @@
         var scoreDisplay = document.createElement("p");
         scoreDisplay.innerText = ("Your final score is " + score + "!");
         playerScoreEl.appendChild(scoreDisplay);
+    };
+
+    var storeHighScore = function(event) {
+        event.preventDefault()
+        var initials = document.querySelector("#initials").value;
+        if (!initials) {
+            alert("Please enter your initials to store your high score!");
+            return;
+        }
+
+        formInitialsEl.reset();
+
+        var highScore = {
+            initials: initials,
+            score: score
+        }
+
+        highScores.push(highScore);
+        highScores.sort((a, b) => {return b.score-a.score});
+
+        while (highScoreListEl.firstChild) {
+            highScoreListEl.removeChild(highScoreListEl.firstChild)
+        }
+
+        for (var i = 0; i < highScores.length; i++) {
+            var highScoreEl = document.createElement("li");
+            highScoreEl.className = "high-score";
+            highScoreEl.innerHTML = highScores[i].initials + " - " + highScores[i].score;
+        }
+
+        
     }
+
+
     
     //on start click, start game
     btnStartEl.addEventListener("click", startQuiz);
