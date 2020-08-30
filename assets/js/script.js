@@ -99,8 +99,25 @@ var startQuiz = function () {
 // Question Shuffler
 arrayShuffleQuestions = questions.sort(() => Math.random() - 0.5)
 setTime()
-setQuestion()
+loadQuestion()
 }
+
+var loadQuestion = {
+    resetAnswers()
+}
+
+// display current question
+var showQuestion = function(index) {
+    questionEl.innerText = index.q
+    for (var i = 0; i < index.choices.length; i++) {
+        var answerSelect = document.createElement('button')
+        answerSelect.innerText = index.choises[i].choice
+        answerSelect.classList.add('btn')
+        answerSelect.classList.add('answerbtn')
+        answerSelect.addEventListener("click", answerCheck)
+        answerSelectionEl.appendChild(answerSelect)
+    }
+};
 
 // on start click, begin the quiz
 btnStartEl.addEventListener("click", startQuiz)
