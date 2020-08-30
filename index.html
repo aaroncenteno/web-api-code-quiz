@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Coding Quiz!</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+    <div class="wrapper">
+        <!-- quiz header -->
+        <header>
+            <span class="current-hs green">High Scores</span>
+            <span class="quiz-title">JavaScript Quiz</span>
+            <span class="time-left green">Time:<span id="time"></span>s</span>
+        </header>
+        <!-- Opening Page -->
+        <div id="start-screen" class="start">
+            <p>
+                Attempt to answer the following code related questions. 
+                WARNING: Incorrect answers will penalize you with a 
+                deduction of time!
+            </p>
+            <button id="start">Start</button>
+        </div>
+        <!-- Question Pages -->
+        <div id="questions" class="hide">
+            <h2 id="current-q"></h2>
+            <div id="answer-choices" class="choices"></div>
+        </div>
+        <!-- End Page -->
+        <div id="end-page" class="hide">
+            <h2>Quiz Complete!</h2>
+            <p>Your final score is <span id="final-score"></span>.</p>
+            <p>
+                Enter your initials: <input type="text" id="initials" max="3" />
+                <button id="submit">Submit</button>
+            </p>
+        </div>
+        <div id="feedback" class="feedback hide"></div>
+    </div>
+
+    <!-- JS Links -->
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
