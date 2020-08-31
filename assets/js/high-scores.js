@@ -1,3 +1,4 @@
+// high-score storage and fuctions
 var storeHighScore = function(event) {
     event.preventDefault()
     var initials = document.querySelector("#initials").value;

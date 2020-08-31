@@ -30,7 +30,7 @@
     var arrayShuffleQuestions;
     var questionIndex = 0;
 
-    //     if go back button is hit on high score page
+    //if go back button is hit on high score page
     var goToStartPage = function () {
         highScoresEl.classList.add("hide");
         highScoresEl.classList.remove("show");
@@ -52,7 +52,7 @@
         }
     }
 
-    // every second, check if game-over is true, or if there is time left. Start time at 30. 
+    // Set Timer Function and Checker
     var setTime = function () {
         timeleft = 50;
 
@@ -73,6 +73,7 @@
         }, 1000)
     };
 
+    // Start The Quiz Function
     var startQuiz = function() {
         //add classes to show/hide start and quiz screen
         openingPageEl.classList.add('hide');
@@ -85,7 +86,7 @@
         loadQuestion()
     };
     
-    // set next question for quiz
+    // load next question for quiz
     var loadQuestion = function() {
         resetAnswers();
         showQuestion(arrayShuffleQuestions[questionIndex]);
@@ -98,7 +99,7 @@
         };
     };
 
-    //display question information (including answer buttons)
+    //show question and answer selection
     var showQuestion = function(index) {
         questionEl.innerText = index.q
         for (var i = 0; i < index.choices.length; i++) {
