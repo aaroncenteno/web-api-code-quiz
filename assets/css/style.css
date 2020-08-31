@@ -16,7 +16,7 @@ body {
     color: var(--secondary);
     margin: 0;
     padding: 0;
-    font-family: "Play", sans-serif;
+    font-family: 'Architects Daughter', cursive;
 }
 
 /* Styling for Header */
@@ -133,7 +133,7 @@ p {
     border: none;
     box-shadow: 0 10px var(--quintary);
     margin-top: 10px;
-    font-family: "Play", sans-serif;
+    font-family: 'Architects Daughter', cursive;
 }
 
 .btn:hover {
