@@ -24,8 +24,8 @@
                 <h1>Coding Quiz!</h1>
                 <p>
                     Attempt to answer the following code-related questions
-                    with the alotted time. WARNING! Incorrect anwsers will
-                    penalize your time remaining!
+                    with the alotted time. <span class= "warning">WARNING!</span> Incorrect anwsers will
+                    penalize your time remaining and score!
                 </p>
                 <button class="btn begin-quiz" id="start-quiz">Start Quiz!</button>
             </div>
@@ -63,15 +63,15 @@
         </div>
         <!-- Correct/Inccorect Displays -->
         <div class="hide" id="correct">
-            <h2>CORRECT!</h2>
+            <h2 class="correct-answer">CORRECT!</h2>
         </div>
         <div class="hide" id="incorrect">
-            <h2>Wrong Answer!</h2>
+            <h2 class="wrong-answer">Wrong Answer!</h2>
         </div>
     </div>
 </body>
 <!-- script link -->
 <script src="./assets/js/questions.js"></script>
-<script src="./assets/js/script.js"></script>
+<script src="./assets/js/main-logic.js"></script>
 <script src="./assets/js/high-scores.js"></script>
 </html>
