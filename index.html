@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Coding Quiz!</title>
+    <!-- Imported Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    <!-- Style Sheet Link -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- quiz header -->
+        <header>
+            <h4 id="current-high-scores">High Scores!</h4>
+            <h4 class="timer">Time: <span id="timer"></span></h4>
+        </header>
+
+        <div id="opening-page" class="show">
+            <div class="start container">
+                <h1>Coding Quiz!</h1>
+                <p>
+                    Attempt to answer the following code-related questions
+                    with the alotted time. <span class= "warning">WARNING!</span> Incorrect anwsers will
+                    penalize your time remaining and score!
+                </p>
+                <button class="btn begin-quiz" id="start-quiz">Start Quiz!</button>
+            </div>
+        </div>
+        <!-- Question Container -->
+        <div id="question-div" class="hide">
+            <div class="questions container">
+                <div id="current-question"></div>
+                <div id="answer-selection" class="btn-grid"></div>
+            </div>
+        </div>
+        <!-- End Page Container -->
+        <div id="end-page" class="hide">
+            <div class="end container">
+                <div id="player-score">
+                    <h1>Quiz Complete!</h1>
+                </div>
+                <form id="initials-score" class="initials">
+                    <p>
+                        Enter Your Initials: <input type="text" name="initials" id="initials" class="text-input" />
+                        <button class="btn begin-quiz" id="submit-score" type="submit">Submit</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+        <!-- High Score Page -->
+        <div id="high-scores-div" class="hide">
+            <div class="high-scores container">
+                <h1 class="high-score">High Scores</h1>
+                <ol id="high-score-list" class="scores-list"></ol>
+                <div>
+                    <button class="btn" id="return">Return To Quiz</button>
+                </div>
+            </div>
+        </div>
+        <!-- Correct/Inccorect Displays -->
+        <div class="hide" id="correct">
+            <h2 class="correct-answer">CORRECT!</h2>
+        </div>
+        <div class="hide" id="incorrect">
+            <h2 class="wrong-answer">Wrong Answer!</h2>
+        </div>
+    </div>
+</body>
+<!-- script link -->
+<script src="./assets/js/questions.js"></script>
+<script src="./assets/js/main-logic.js"></script>
+<script src="./assets/js/high-scores.js"></script>
+</html>
