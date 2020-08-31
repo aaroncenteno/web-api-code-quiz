@@ -19,5 +19,5 @@ var questions = [
   { q: 'A very useful tool used during the development and debuggin for printing content to the debugger is: ', 
     a: '4. console.log', 
     choices: [{choice: '1. JavaScript'}, {choice: '2. terminal/bash'}, {choice: '3. for loops'}, {choice: '4. console.log'}]
-  },
+  }
 ];

@@ -27,7 +27,7 @@
     var highScores = [];
 
     //assign array details for questions 
-    var arrayShuffleQuestions;
+    var arrayRandomizeQuestions;
     var questionIndex = 0;
 
     //if go back button is hit on high score page
@@ -81,7 +81,7 @@
         questionDivEl.classList.remove('hide');
         questionDivEl.classList.add('show');
         //Shuffle the questions so they show in random order
-        arrayShuffleQuestions = questions.sort(() => Math.random() - 0.5)
+        arrayRandomizeQuestions = questions.sort(() => Math.random())
         setTime()
         loadQuestion()
     };
@@ -89,7 +89,7 @@
     // load next question for quiz
     var loadQuestion = function() {
         resetAnswers();
-        showQuestion(arrayShuffleQuestions[questionIndex]);
+        showQuestion(arrayRandomizeQuestions[questionIndex]);
     };
 
     // remove answer buttons
@@ -135,7 +135,7 @@
     // check to see if the players choice is correct/incorrect
     var checkAnswer = function(event) {
         var selectedAnswer = event.target
-            if (arrayShuffleQuestions[questionIndex].a === selectedAnswer.innerText){
+            if (arrayRandomizeQuestions[questionIndex].a === selectedAnswer.innerText){
                 answerCorrect();
                 score = score + 5;
             }
@@ -147,7 +147,7 @@
 
             // Check if there is another question and if there is load it
             questionIndex++
-            if (arrayShuffleQuestions.length > questionIndex + 1) {
+            if (arrayRandomizeQuestions.length > questionIndex + 1) {
                 loadQuestion();
             }
             else {
