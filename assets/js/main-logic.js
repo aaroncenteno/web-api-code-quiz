@@ -141,7 +141,7 @@
             }
             else {
                 answerIncorrect()
-                score = score - 2;
+                score = score - 1;
                 timeleft = timeleft - 10;
             }
 
